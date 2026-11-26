@@ -41,10 +41,10 @@ iOS 版没有账号系统；Android 版提供可选的手机号登录和一次�
 即使不开启完全访问权限，中文与英文的直接输入功能仍然可用。</p>
 
 <h2>Android 账号与登录</h2>
-<p>Android 版不要求登录；只有在你主动登录、购买或恢复权益时，才会使用手机号。</p>
+<p>Android 版不要求登录；只有在你主动登录、购买或恢复权益时，才会使用手机号。手机号与短信验证码由 Tikos 账号服务处理；线上版本使用 Tikos 登录时，键语服务端不保存手机号。若部署使用键语内置登录模式，键语服务端会保存手机号用于登录。</p>
 <ul>
   <li><strong>手机号与短信验证码</strong>：登录时由 Tikos 账号服务发送并校验验证码；验证码仅用于本次登录。</li>
-  <li><strong>服务器保存</strong>：手机号、账户 ID、登录会话凭证的哈希、应用生成的随机设备标识（<code>kldev_…</code>，不是系统广告 ID）、试用结束时间、永久解锁状态，以及订单号、金额、支付渠道、支付状态和创建时间。</li>
+  <li><strong>服务器保存</strong>：账户 ID、登录会话凭证的哈希、应用生成的随机设备标识（<code>kldev_…</code>，不是系统广告 ID）、试用结束时间、永久解锁状态，以及订单号、金额、支付渠道、支付状态和创建时间。</li>
   <li><strong>用途</strong>：跨设备同步权益、开通试用、完成购买与兑换、售后查询和防止滥用。</li>
   <li><strong>不收集</strong>：通讯录、短信内容、精确位置或广告 ID；不上传按键内容。</li>
 </ul>
@@ -114,10 +114,10 @@ governed by <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Polic
 Chinese and English direct input remains available even without Full Access.</p>
 
 <h2>Android Account and Sign-In</h2>
-<p>The Android app does not require an account. A phone number is used only when you choose to sign in, purchase, or restore access.</p>
+<p>The Android app does not require an account. A phone number is used only when you choose to sign in, purchase, or restore access. The Tikos account service handles the phone number and SMS code; when the hosted app uses Tikos sign-in, the Keylish server does not store the phone number. If a deployment uses Keylish built-in sign-in, the Keylish server stores the phone number for login.</p>
 <ul>
   <li><strong>Phone number and SMS code</strong>: the Tikos account service sends and verifies the code during sign-in. The code is used only for that sign-in.</li>
-  <li><strong>Stored on our server</strong>: phone number, account ID, hashed session credential, an app-generated random device identifier (<code>kldev_…</code>, not an advertising ID), trial end time, lifetime unlock status, and order ID, amount, payment channel, payment status, and creation time.</li>
+  <li><strong>Stored on our server</strong>: account ID, hashed session credential, an app-generated random device identifier (<code>kldev_…</code>, not an advertising ID), trial end time, lifetime unlock status, and order ID, amount, payment channel, payment status, and creation time.</li>
   <li><strong>Purpose</strong>: syncing entitlement across devices, starting trials, completing purchases and redemptions, support, and abuse prevention.</li>
   <li><strong>Not collected</strong>: contacts, SMS content, precise location, or advertising ID. Keystrokes are not uploaded.</li>
 </ul>
@@ -155,7 +155,7 @@ and Android access can be restored with the same phone number. There is no subsc
 <h2>Data Retention and Deletion</h2>
 <p>The iOS app holds no server-side data; deleting the app removes all related local data from your device.</p>
 <p>Android account and entitlement data is retained while the account is active. You can request account deletion through the GitHub Issues link below;
-after verification we delete the phone number, account, device binding, and entitlement records. Order transaction records may be retained for a period
+after verification we delete the phone number (where Keylish stores it), account, device binding, and entitlement records. Order transaction records may be retained for a period
 required by law or accounting rules. Signing out or uninstalling the app does not automatically delete the server account.</p>
 
 <h2>Changes to This Policy</h2>
